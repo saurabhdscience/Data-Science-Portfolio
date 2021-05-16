@@ -1,0 +1,167 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- request_names:
+    use_entities: true
+- ask_timeline:
+    use_entities: true
+- ask_budget:
+    use_entities: true
+- urlAvailable:
+    use_entities: true
+- begin_lead:
+    use_entities: true
+- ask_mockup:
+    use_entities: true
+entities: []
+slots:
+  first_name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  last_name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  email:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  phone:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - image: https://custpostimages.s3.ap-south-1.amazonaws.com/11/Loading-Animation%20%281%29.gif
+    text: Hi! I am Saurabh from Appventurez Mobitech. We provide high quality and cost-effective Web, Mobile, Chatbot and Voicebot solutions. For more detail you [click here](https://www.appventurez.com/)
+  utter_menu:
+  - buttons:
+    - payload: Web Application Development
+      title: Web Application Development
+    - payload: Mobile App Development
+      title: Mobile App Development
+    - payload: Chatbot Development
+      title: Chatbot Development
+    - payload: Frontend Development
+      title: Frontend Development
+    - payload: Progessive Web App Development
+      title: Progessive Web App Development
+    - payload: AI & Machine Learning
+      title: AI & Machine Learning
+    text: What are you looking for today?
+  utter_lead_q1:
+  - text: Great. We have developed more than 1000+ web applications till date!
+  utter_ask_requirement:
+  - buttons:
+    - payload: Ecommerce
+      title: Ecommerce
+    - payload: Portfolio
+      title: Portfolio
+    - payload: Brochure
+      title: Brochure
+    - payload: Crowdfunding
+      title: Crowdfunding
+    - payload: News or magazine
+      title: News or magazine
+    - payload: Social media
+      title: Social media
+    - payload: Others
+      title: Others
+    text: Can you share some brief description of your requirements?
+  utter_ask_mockup:
+  - buttons:
+    - payload: Wireframes
+      title: Wireframes
+    - payload: Designs
+      title: Designs
+    - payload: RFP or any Document
+      title: RFP or any Document
+    - payload: None
+      title: None
+    text: |
+      Alright!
+      Do you have any of the following ready?
+  utter_urlAvailable:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Is there any URL that you would like to share for our reference?
+  utter_ask_url:
+  - text: Could you please share the URL with us?
+  utter_ask_timeline:
+  - buttons:
+    - payload: Immediately
+      title: Immediately
+    - payload: within a month
+      title: within a month
+    - payload: within the next 3 months
+      title: within the next 3 months
+    - payload: after 3 months
+      title: after 3 months
+    text: When do you plan to enter development with this project?
+  utter_ask_budget:
+  - buttons:
+    - payload: Below $5000
+      title: Below $5000
+    - payload: $5000 - $15000
+      title: $5000 - $15000
+    - payload: $15000 - $25000
+      title: $15000 - $25000
+    - payload: $25000 and above
+      title: $25000 and above
+    text: |
+      Great!
+      What is your earmarked budget for this project?
+  utter_ask_first_name:
+  - text: What is your first name?
+  utter_ask_last_name:
+  - text: What is your last name?
+  utter_ask_email:
+  - text: What is your email?
+  utter_ask_phone:
+  - text: What is your phone number?
+  utter_slots_values:
+  - text: |
+      Here is your contact information:
+      First Name: {first_name}
+      Last Name: {last_name}
+      Email: {email}
+      Phone: {phone}
+  utter_submit:
+  - text: |
+      I will have our Business Experts get in touch with you soon, to make your project a reality!
+      In the meanwhile for anything, you can contact us at sales@appventurez.com or +91 999 999 9999
+actions:
+- utter_greet
+- utter_slots_values
+- utter_submit
+- validate_name_form
+forms:
+  name_form:
+    first_name:
+    - type: from_text
+    last_name:
+    - type: from_text
+    email:
+    - type: from_text
+    phone:
+    - type: from_text
+e2e_actions: []

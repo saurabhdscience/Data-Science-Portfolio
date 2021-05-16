@@ -1,0 +1,17 @@
+2021-05-16 06:50:23,208 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-05-16 06:50:23,214 [INFO ]  Loading model models/20210515-200745.tar.gz...
+2021-05-16 06:50:25,389 [INFO ]  Loading model models/20210515-200745.tar.gz...
+2021-05-16 06:50:46,466 [INFO ]  Rasa server is up and running.
+2021-05-16 06:50:59,643 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+Traceback (most recent call last):
+  File "/home/appventurez/Python/new-test-rasa/env/lib/python3.6/site-packages/sanic/app.py", line 931, in handle_request
+    response = await response
+  File "/home/appventurez/Python/new-test-rasa/env/lib/python3.6/site-packages/rasa/core/channels/rest.py", line 101, in receive
+    sender_id = await self._extract_sender(request)
+  File "/home/appventurez/Python/new-test-rasa/env/lib/python3.6/site-packages/rasa/core/channels/rest.py", line 52, in _extract_sender
+    return req.json.get("sender", None)
+AttributeError: 'NoneType' object has no attribute 'get'
+2021-05-16 07:02:46,001 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-05-16 07:02:46,008 [INFO ]  Loading model models/20210515-200745.tar.gz...
+2021-05-16 07:02:48,153 [INFO ]  Loading model models/20210515-200745.tar.gz...
+2021-05-16 07:03:08,235 [INFO ]  Rasa server is up and running.

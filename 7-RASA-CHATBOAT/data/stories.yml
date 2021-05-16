@@ -1,0 +1,44 @@
+version: "2.0"
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_menu
+  - intent: begin_lead
+  - action: utter_lead_q1
+  - action: utter_ask_requirement
+  - intent: ask_mockup
+  - action: utter_ask_mockup
+  # - intent: urlAvailable
+  # - action: utter_urlAvailable
+  - intent: ask_timeline
+  - action: utter_ask_timeline
+  - intent: ask_budget
+  - action: utter_ask_budget
+
+  - intent: request_names
+  - action: name_form
+  - active_loop: name_form
+
+  # - slot_was_set:
+  #   - requested_slot: timeline
+  # - slot_was_set:
+  #   - requested_slot: urlAvailable
+  # - slot_was_set:
+  #   - requested_slot: mockup
+  # - slot_was_set:
+  #   - requested_slot: requirement
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - requested_slot: phone
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values

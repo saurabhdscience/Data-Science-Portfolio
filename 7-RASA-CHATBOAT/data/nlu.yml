@@ -1,0 +1,101 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: begin_lead
+  examples: |
+    - Web Application Development
+    - Mobile App Development
+    - Chatbot Development
+    - Frontend Development
+    - Progessive Web App Development
+    - AI & Machine Learning
+- intent: ask_requirement
+    - e commerce
+    - commerce
+    - E-commerce
+    - Wordpress
+    - Django
+    - Flask
+    - I want to make a site on flask
+    - I want to make a static website
+    - I want to make a dynamic website
+    - I want to make a 6 page website
+    - Blog
+    - Corporate
+    - Ecommerce
+    - Portfolio
+    - Brochure
+    - Crowdfunding
+    - News or magazine
+    - Social media
+    - TV or video streaming
+    - Educational
+    - Portal
+    - Wiki or community forum
+    - Others
+- intent: ask_mockup
+  examples: |
+    - e commerce
+    - commerce
+    - E-commerce
+    - Wordpress
+    - Django
+    - Flask
+    - I want to make a site on flask
+    - I want to make a static website
+    - I want to make a dynamic website
+    - I want to make a 6 page website
+    - Blog
+    - Corporate
+    - Ecommerce
+    - Portfolio
+    - Brochure
+    - Crowdfunding
+    - News or magazine
+    - Social media
+    - TV or video streaming
+    - Educational
+    - Portal
+    - Wiki or community forum
+    - Others
+# - intent: urlAvailable
+#   examples: |
+#     - Wireframes
+#     - Designs
+#     - RFP or any Document
+
+- intent: ask_timeline
+  examples: |
+    - Wireframes
+    - Designs
+    - RFP or any Document
+    - None
+
+- intent: ask_budget
+  examples: |
+    - Immediately
+    - within a month
+    - within the next 3 months
+    - after 3 months
+
+- intent: request_names
+  examples: |
+    - Below $5000
+    - $5000 - $15000
+    - $15000 - $25000
+    - $25000 and above
